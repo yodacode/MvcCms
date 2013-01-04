@@ -1,0 +1,21 @@
+﻿@model MvcCms.Models.Message
+
+@{
+    ViewBag.Title = "Success";
+}
+
+<div class="container">
+    <div class="page-header">
+        <h2>Votre message nous a bien été transmis</h2>
+    </div>
+    <h3>Récapitulatif du message</h3>
+    <p>
+        <strong>Nom : </strong>@Model.Name<br />
+        <strong>Sujet : </strong>@Model.Title<br />
+        <strong>Votre Site : </strong>@Model.Site<br />
+    </p>
+    <p>
+        <strong>Contenu : </strong><br />
+        @Model.Content
+    </p>
+</div>

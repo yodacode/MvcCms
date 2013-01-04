@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MvcCms.Models.Post>
+
+@{
+    ViewBag.Title = "Abstract";
+    Layout = null;
+}
+
+@foreach (var post in Model)
+{
+    <div class="span8">
+        <h3>@Html.ActionLink(post.Title, "Details", new { id = post.PostId })</h3>
+        @Html.Raw(post.Content)
+        @Html.ActionLink("Lire la suite", "Details", new { id = post.PostId }, new { @class="btn btn-mini section pull-right" })
+    </div>
+}
+
+
+

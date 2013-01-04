@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "_Menu";
+    ViewBag.CurrentController = @ViewContext.Controller.ValueProvider.GetValue("controller").RawValue;
+    ViewBag.CurrentAction = @ViewContext.Controller.ValueProvider.GetValue("action").RawValue;    
+}
+
+            
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="/">CmsMvcNet</a>
+        <ul class="nav pull-left">
+            @if (ViewBag.CurrentController == "Home")
+            {
+                <li class="active" id="current">
+                    @Html.ActionLink("Accueil", "Index", "Home")
+                </li>
+            } else {
+                <li> 
+                    @Html.ActionLink("Accueil", "Index", "Home")
+                </li>
+            }
+            @if (ViewBag.CurrentController == "Post")
+            {
+                 <li class="active dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Le blog <b class="caret"></b></a>
+                 </li>
+             } else {
+                <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Le blog <b class="caret"></b></a>
+                </li>
+             }
+        </ul>
+        <ul class="nav pull-right">
+            <li class="divider-vertical"></li>   
+            <li>
+                @Html.ActionLink("Contact", "Index", "Message")
+            </li>
+            <li>
+                @Html.ActionLink("Administration", "Index", "PostManager")
+            </li>
+        </ul>
+    </div>
+ </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $subMenu = $('.dropdown');
+        $navContainer = $('.navbar-inner .pull-left');
+        $navContainer.append(
+            '<li class="loader-page">'+
+            '<a>Chargement des pages...</a>'+
+            '</li>'
+           );
+       $.ajax({
+           type: "GET",
+           url: '@Url.Action("getMenuPages", "Page")',
+           success: function (data) {
+               $('.loader-page').remove();
+               $navContainer.append(data);
+           }
+       });
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetMenuTags", "Post")',
+            success: function (data) {
+               $subMenu.append(data);
+               $subMenu.find('.dropdown-menu').append(
+                   '<li class="divider"></li>'+
+                   '<li><a href="/Post/Index">Tout</a></li>'
+                );
+           }
+        });
+   });
+</script>

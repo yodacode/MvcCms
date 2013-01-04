@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "_MenuAdmin";
+    ViewBag.CurrentController = @ViewContext.Controller.ValueProvider.GetValue("controller").RawValue;
+    ViewBag.CurrentAction = @ViewContext.Controller.ValueProvider.GetValue("action").RawValue;    
+}
+
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <a class="brand" href="#">Administration</a>
+        <ul class="nav pull-left">
+            @if (ViewBag.CurrentController == "PostManager")
+            {
+                <li class="active" id="current">
+                    @Html.ActionLink("Gérer les articles", "Index", "PostManager")
+                </li>
+            } else {
+                <li> 
+                    @Html.ActionLink("Gérer les articles", "Index", "PostManager")
+                </li>
+            }
+            @if (ViewBag.CurrentController == "PageManager")
+            {
+                 <li class="active">
+                      @Html.ActionLink("Gérer les pages", "Index", "PageManager")
+                 </li>
+             } else {
+                <li>
+                     @Html.ActionLink("Gérer les pages", "Index", "PageManager")
+                </li>
+             }
+             @if (HttpContext.Current.User.IsInRole("Administrator"))
+             {
+                if (ViewBag.CurrentController == "Account")
+                {
+                     <li class="active">
+                          @Html.ActionLink("Gérer les membres", "GetUsers", "Account")
+                     </li>
+                 } else {
+                    <li>
+                         @Html.ActionLink("Gérer les membres", "GetUsers", "Account")
+                    </li>
+                 }
+             }
+        </ul>
+        <ul class="nav pull-right">
+            <li class="divider-vertical"></li>   
+            <li>
+                 @Html.ActionLink("Retour au site", "Index", "Home")
+            </li>
+            <li>
+                 @Html.ActionLink("Se déconnecter", "LogOff", "Account")
+            </li>
+        </ul>
+    </div>
+</div>

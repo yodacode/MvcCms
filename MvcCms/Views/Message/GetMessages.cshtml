@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MvcCms.Models.Message>
+
+@{
+    ViewBag.Title = "GetMessages";
+}
+
+<h2>GetMessages</h2>
+<ul>
+@foreach (var message in Model)
+{
+    <li>@message.Title</li>
+}
+</ul>

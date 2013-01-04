@@ -1,0 +1,15 @@
+﻿@model MvcCms.Models.Page
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="page-header">
+        <h2>@Model.Title</h2>
+    </div>
+    @Html.Raw(Model.Content)
+    <div class="section">
+        <small>@Model.Date.ToString("dd/MM/yyyy")</small>
+    </div>
+</div>

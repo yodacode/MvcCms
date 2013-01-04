@@ -4,4 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Post: @Model.Title</h2>
+<div class="container">
+    <div class="page-header">
+        <h2>@Model.Title</h2>
+    </div>
+     @Html.Raw(Model.Content)
+    <div>@Model.Date.ToString("dd/MM/yyyy")</div>
+</div>

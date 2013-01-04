@@ -1,0 +1,44 @@
+﻿@model MvcCms.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="page-header">
+        <h2>Details</h2>
+    </div>
+    <fieldset>
+        <legend>Post</legend>
+
+        <div class="display-label">Tag</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Tag.Name)
+        </div>
+
+        <div class="display-label">Author</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Author.Name)
+        </div>
+
+        <div class="display-label">Title</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Title)
+        </div>
+
+        <div class="display-label">Date</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Date)
+        </div>
+
+        <div class="display-label">Content</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Content)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.PostId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</div>

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MvcCms.Models.Page>
+
+@{
+    ViewBag.Title = "GetMenuPages";
+    Layout = null;
+}
+
+@foreach (var page in Model)
+{
+    <li>@Html.ActionLink(page.Title, "Details", new { id = page.PageId })</li>
+}
+

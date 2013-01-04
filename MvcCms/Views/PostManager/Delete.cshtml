@@ -1,0 +1,51 @@
+﻿@model MvcCms.Models.Post
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="page-header">
+        <h2>Delete</h2>
+    </div>
+
+    <h3>Etes vous sure de vouloir supprimier cet article</h3>
+    <fieldset class="span8">
+        <legend>Post</legend>
+
+        <div class="display-label">Catégorie</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Tag.Name)
+        </div>
+
+        <div class="display-label">Author</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Author.Name)
+        </div>
+
+        <div class="display-label">Title</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Title)
+        </div>
+
+        <div class="display-label">Date</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Date)
+        </div>
+
+        <div class="display-label">Content</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Content)
+        </div>
+    </fieldset>
+    @using (Html.BeginForm()) {
+        <div class="span8 section">
+            <input type="submit" class="btn btn-primary" value="Supprimer" />
+        </div>
+            @Html.ActionLink("Retour à la liste", "Index")
+        
+        
+    }
+
+</div>

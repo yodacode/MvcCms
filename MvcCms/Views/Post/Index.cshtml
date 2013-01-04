@@ -1,16 +1,39 @@
 ﻿@model IEnumerable<MvcCms.Models.Tag>
+
 @{
-    ViewBag.Title = "Store";
+    ViewBag.Title = "Index";
 }
-<h3>Browse Genres</h3>
 
-<p>
-    Select from @Model.Count() genres:
-</p>
 
-<ul>
-    @foreach (var tag in Model)
-    {
-        <li>@Html.ActionLink(tag.Name, "Browse", new { tag = tag.Name })</li>
-    }
-</ul>
+<div class="container">
+    <div class="page-header">
+        <h3>@Model.Count() catégories Disponibles:</h3>
+    </div>
+
+    <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+            @foreach (var tag in Model)
+            {
+                <li>@Html.ActionLink(tag.Name, "Browse", new { tag = tag.Name })</li>
+            }
+        </ul>
+        <div class="tab-content">
+        </div>
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $content = $('.tab-content');
+        $content.append('<h4 class="loader-post">Chargement des posts...</h4>');
+       $.ajax({
+           type: "GET",
+           url: '@Url.Action("Abstract", "Post")',
+           success: function (data) {
+               $('.loader-post').remove();
+                $content.append(data);
+           }
+       });
+   });
+</script>

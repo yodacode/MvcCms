@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "_GetCurrentRole";
+}
+
+<div class="container">
+
+    <div class="alert">
+     <button type="button" class="close" data-dismiss="alert">&times;</button>
+        @if(HttpContext.Current.User.IsInRole("Administrator")) {
+            <strong>Je suis Admin!</strong>
+            <span>Je peu administrer le contenu du site et gérer les membres</span>
+        } else {
+            <strong>Je suis User!</strong>
+            <span>Je peu administrer le contenu du site</span>
+        }
+    </div>
+</div>
+
+

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MvcCms.Models.Page>
+@helper Truncate(string input, int length)
+{
+    if (input.Length <= length) {
+        @input
+    } else {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="page-header">
+        <h2>Liste des Articles</h2>
+       <div class="section"> @Html.ActionLink("Ajouter une Page", "Create", null,  new { @class="btn pull-right btn-primary section" }) </div>
+    </div>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            Author
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Contenu
+        </th>
+        <th>
+            Statut
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Truncate(item.Author.Name, 25)
+        </td>
+        <td>
+            @Truncate(item.Title, 25)
+        </td>
+        <td>
+            @item.Date.ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Truncate(item.Content, 25)
+        </td>
+        <td>
+            @if (item.Online)
+            {
+                <span class="label label-success">En ligne</span>
+            } else {
+                <span class="label label-important">Hors ligne</span>
+            }
+            
+        </td>
+        <td style="width:200px;">
+            @Html.ActionLink("Editer", "Edit", new { id = item.PageId }, new { @class = "btn btn-mini" })
+            @Html.ActionLink("Détails", "Details", new { id=item.PageId },  new { @class = "btn btn-mini" })
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.PageId },  new { @class = "btn btn-mini" })
+        </td>
+    </tr>
+}
+
+</table>
+</div>
