@@ -17,19 +17,33 @@ namespace MvcCms.Controllers
             var tags = storeDB.Tags.ToList();
             return View(tags);
         }
+
+        public ActionResult Abstract()
+        {
+            var posts = storeDB.Posts.ToList();
+            return View(posts);
+        }
+
         //
         // GET: /Store/Browse
         public ActionResult Browse(string tag)
         {
-            var tagModel = new Tag { Name = tag };
+            var tagModel = storeDB.Tags.Include("Posts").Single(g => g.Name == tag);
             return View(tagModel);
         }
+
         //
         // GET: /Store/Details
         public ActionResult Details(int id)
         {
-            var post = new Post { Title = "Post " + id };
+            var post = storeDB.Posts.Find(id);
             return View(post);
+        }
+
+        public ActionResult GetMenuTags()
+        {
+            var tags = storeDB.Tags.ToList();
+            return View(tags);
         }
     }
 }

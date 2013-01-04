@@ -3,5 +3,21 @@
 @{
     ViewBag.Title = "Browse";
 }
+<div class="container">
+<div class="page-header">
+    <h2>Catégorie : @Model.Name</h2>
+</div>
 
-<h2>Browsing Tag: @Model.Name</h2>
+
+@foreach (var post in Model.Posts)
+{
+    
+    <div class="span8">
+        <h3>@Html.ActionLink(post.Title, "Details", new { id = post.PostId })</h3>
+        @Html.Raw(post.Content)
+        <div><strong>@post.Tag.Name</strong></div>
+        @Html.ActionLink("Lire la suite", "Details", new { id = post.PostId }, new { @class="btn btn-mini section pull-right" })
+    </div>
+
+}
+</div>

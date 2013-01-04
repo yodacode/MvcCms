@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcCms", "MvcCms\MvcCms.csproj", "{37039DC9-9E13-4A13-B442-4D251F86544F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcCms", "MvcCms.csproj", "{37039DC9-9E13-4A13-B442-4D251F86544F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
