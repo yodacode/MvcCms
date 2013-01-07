@@ -42,6 +42,7 @@ namespace MvcCms.Controllers
         {
             ViewBag.TagId = new SelectList(db.Tags, "TagId", "Name");
             ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name");
+            ViewBag.KeyId = new SelectList(db.Keys, "KeyId", "Name");
             return View();
         } 
 
@@ -60,6 +61,7 @@ namespace MvcCms.Controllers
 
             ViewBag.TagId = new SelectList(db.Tags, "TagId", "Name", post.TagId);
             ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", post.AuthorId);
+            ViewBag.KeyId = new SelectList(db.Keys, "KeyId", "Name", post.KeyId);
             return View(post);
         }
         

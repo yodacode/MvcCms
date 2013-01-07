@@ -16,6 +16,8 @@ namespace MvcCms.Models
         public int TagId { get; set; }
         [DisplayName("Auteur")]
         public int AuthorId { get; set; }
+        [DisplayName("Key")]
+        public int KeyId { get; set; }
         [Required(ErrorMessage = "Un titre pour le post est requis")]
         [StringLength(160)]
         public string Title { get; set; }

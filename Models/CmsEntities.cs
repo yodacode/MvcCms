@@ -15,5 +15,10 @@ namespace MvcCms.Models
         public DbSet<Author> Authors { get; set; }
         public DbSet<Message> Messages { get; set; }
 
+
+          internal void SaveSchanges()
+          {
+              throw new NotImplementedException();
+          }
     }
 }

@@ -38,6 +38,7 @@ namespace MvcCms.Controllers
         public ActionResult Create()
         {
             ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name");
+            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name");
             return View();
         } 
 

@@ -24,6 +24,13 @@ namespace MvcCms.Models
                 new Tag { Name = "CMS" }
             };
 
+            var keys = new List<Key>
+            {
+                new Key { Name = "huhu" },
+                new Key { Name = "hihi" },
+                new Key { Name = "lol" },
+            };
+
 
 
             var authors = new List<Author>
@@ -199,6 +206,9 @@ namespace MvcCms.Models
                 new Page { Title = "Page 1", Date = DateTime.Now, Author = authors.Single(a => a.Name == "Aaron Copland & London Symphony Orchestra"), Content = "Has <strong>autem provincias, quas Orontes ambiens amnis<strong><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div> Armeniorum abstractas dicioni Romanae coniunxit.", Online= true },
                 new Page { Title = "Page 2", Date = DateTime.Now, Author = authors.Single(a => a.Name == "Aaron Goldberg"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funrato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.<div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div>", Online= true }, 
             }.ForEach(a => context.Pages.Add(a));
+
         }
+
+        
     }
 }

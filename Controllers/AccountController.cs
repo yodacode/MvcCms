@@ -159,6 +159,7 @@ namespace MvcCms.Models
         public ActionResult GetUsers()
         {
             var users = Membership.GetAllUsers();
+            //Roles.GetRolesForUser(User.Identity.Name);
             return View(users);
         }
 

@@ -492,6 +492,7 @@
     <Content Include="Views\Page\Details.cshtml" />
     <Content Include="Views\Account\RegisterSuccess.cshtml" />
     <Content Include="Views\Post\GetMenuTags.cshtml" />
+    <Content Include="Views\Person\CreatePerson.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
