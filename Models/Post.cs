@@ -13,7 +13,9 @@ namespace MvcCms.Models
         [ScaffoldColumn(false)]
         public int PostId { get; set; }
         [DisplayName("Tag")]
+        
         public int TagId { get; set; }
+       
         [DisplayName("Auteur")]
         public int AuthorId { get; set; }
         [DisplayName("Key")]
@@ -32,5 +34,7 @@ namespace MvcCms.Models
         public Tag Tag { get; set; }
         public Author Author { get; set; }
         public bool Online { get; set; }
+
+       
     }
 }

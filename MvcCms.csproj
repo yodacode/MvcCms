@@ -98,6 +98,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\MessageManagerController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PageManagerController.cs" />
     <Compile Include="Controllers\PostController.cs" />
@@ -493,6 +494,9 @@
     <Content Include="Views\Account\RegisterSuccess.cshtml" />
     <Content Include="Views\Post\GetMenuTags.cshtml" />
     <Content Include="Views\Person\CreatePerson.cshtml" />
+    <Content Include="Views\MessageManager\Index.cshtml" />
+    <Content Include="Views\MessageManager\Details.cshtml" />
+    <Content Include="Views\MessageManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

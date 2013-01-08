@@ -1,0 +1,40 @@
+﻿@model MvcCms.Models.Message
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container">
+    <div class="page-header">
+        <h2>@Model.Title</h2>
+    </div>
+
+    <fieldset>
+        <legend>Message</legend>
+
+        <div class="display-label"><h4>De</h4></div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <div class="display-label"><h4>Site</h4></div>
+        <div class="display-field">
+            <a href="@Html.DisplayFor(model => model.Site)">@Html.DisplayFor(model => model.Site)</a>
+        </div>
+
+        <div class="display-label"><h4>Sujet</h4></div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Title)
+        </div>
+
+        <div class="display-label"><h4>Contenu</h4></div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Content)
+        </div>
+    </fieldset>
+    <div class="section">
+        @Html.ActionLink("Retour à la liste", "Index", false, new { @class = "btn  btn-primary " })
+    </div>
+</div>

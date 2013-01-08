@@ -25,5 +25,7 @@ namespace MvcCms.Models
         [Required(ErrorMessage = "Un contenu est requis")]
         [StringLength(160)]
         public string Content { get; set; }
+        [ScaffoldColumn(false)]
+        public bool Statment { get; set; }
     }
 }

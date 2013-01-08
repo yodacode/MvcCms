@@ -1,0 +1,124 @@
+﻿@model IEnumerable<MvcCms.Models.Message>
+@helper Truncate(string input, int length)
+{
+    if (input.Length <= length) {
+        @input
+    } else {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script type="text/javascript">
+
+
+    $(function () {
+
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("CounterMessages", "MessageManager")',
+           success: function (data) {
+               //$('.loader-page').remove();
+               $('.page-header').append(data);
+           }
+         });
+    });
+
+    
+    var AjaxComplete = function () {
+        $(function () {
+            var $label = $('.statment .label');
+            $('.statment .label').text('lu');
+            $('.update-stament').hide();
+        });
+    };
+        
+
+</script>
+
+<div class="container">
+    <div class="page-header">
+        <h2>
+            @if(Model.Count() != 1)
+            {
+                @Model.Count()
+                <span>Messages</span>
+            } else 
+            {
+                @Model.Count()
+                <span>Message</span>
+            }
+        </h2>
+    </div>
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                De
+            </th>
+            <th>
+                Titre
+            </th>
+            <th>
+                Sujet
+            </th>
+            <th>
+                Content
+            </th>
+            <th>
+                Etat
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr id="@item.MessageId">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a href="@Html.DisplayFor(modelItem => item.Site)">@Html.DisplayFor(modelItem => item.Site)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td class="statment">
+
+                @if (item.Statment)
+                {
+                    <span class="label">lu</span>
+                } else {
+                    <span class="label">non lu</span>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Lire", "Details", new { id=item.MessageId }) |
+                
+                @Ajax.ActionLink( "Supprimer","Delete","MessageManager",
+                
+                     new { id = item.MessageId },
+                     new AjaxOptions { 
+                                        HttpMethod = "POST",
+                                        Confirm = "Etes vous sure de voiloir supprimer le message ?",
+                                        OnComplete = "$('#"+@item.MessageId+"').slideUp().remove()"
+                                     },
+                                     
+                     new { title = "Add a thing to the database." } )
+
+
+
+            </td>
+        </tr>
+    }
+
+    </table>
+</div>

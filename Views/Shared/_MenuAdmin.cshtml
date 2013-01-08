@@ -40,6 +40,17 @@
                          @Html.ActionLink("Gérer les membres", "GetUsers", "Account")
                     </li>
                  }
+                
+                if (ViewBag.CurrentController == "MessageManager")
+                {
+                     <li class="active">
+                          @Html.ActionLink("Messages", "Index", "MessageManager")
+                     </li>
+                 } else {
+                    <li>
+                         @Html.ActionLink("Messages", "Index", "MessageManager")
+                    </li>
+                 }
              }
         </ul>
         <ul class="nav pull-right">
