@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Text.RegularExpressions;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +17,13 @@ namespace MvcCms.Controllers
         
 
         public CmsEntities db = new CmsEntities();
+
+        public static string SanitizeUrl(string str)
+        {
+            string cleanString = str.ToLower().Replace(" ", "-"); // ToLower() on the string thenreplaces spaces with hyphens
+            cleanString = Regex.Replace(cleanString, @"[^a-zA-Z0-9\/_|+ -]", ""); // removes all non-alphanumerics/underscore/hyphens
+            return cleanString;
+        }
 
         //
         // GET: /PostManager/
@@ -54,6 +62,14 @@ namespace MvcCms.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (post.Slug != null)
+                {
+                    post.Slug = SanitizeUrl(post.Slug);
+                }
+                else
+                {
+                    post.Slug = SanitizeUrl(post.Title);
+                }
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
@@ -84,6 +100,14 @@ namespace MvcCms.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (post.Slug != null)
+                {
+                    post.Slug = SanitizeUrl(post.Slug);
+                }
+                else
+                {
+                    post.Slug = SanitizeUrl(post.Title);
+                }
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

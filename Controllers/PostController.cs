@@ -9,11 +9,14 @@ namespace MvcCms.Controllers
 {
     public class PostController : Controller
     {
+
+
         CmsEntities storeDB = new CmsEntities();
         //
         // GET: /Store/
         public ActionResult Index()
         {
+            
             var tags = storeDB.Tags.ToList();
             return View(tags);
         }
@@ -34,7 +37,7 @@ namespace MvcCms.Controllers
 
         //
         // GET: /Store/Details
-        public ActionResult Details(int id)
+        public ActionResult Details(int id, string title)
         {
             var post = storeDB.Posts.Find(id);
             return View(post);

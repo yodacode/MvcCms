@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KeyManagerController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\MessageManagerController.cs" />
     <Compile Include="Controllers\PageController.cs" />
@@ -118,6 +119,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-MvcCms-20121227152751.mdf" />
+    <Content Include="App_Data\aspnet-MvcCms-20121227152751_log.ldf">
+      <DependentUpon>aspnet-MvcCms-20121227152751.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -497,9 +502,13 @@
     <Content Include="Views\MessageManager\Index.cshtml" />
     <Content Include="Views\MessageManager\Details.cshtml" />
     <Content Include="Views\MessageManager\Delete.cshtml" />
+    <Content Include="Views\KeyManager\Index.cshtml" />
+    <Content Include="Views\KeyManager\Details.cshtml" />
+    <Content Include="Views\KeyManager\Create.cshtml" />
+    <Content Include="Views\KeyManager\Edit.cshtml" />
+    <Content Include="Views\KeyManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Scripts\tiny_mce\plugins\spellchecker\classes\utils\" />
     <Folder Include="Scripts\tiny_mce\plugins\spellchecker\includes\" />
   </ItemGroup>

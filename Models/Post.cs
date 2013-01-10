@@ -23,6 +23,9 @@ namespace MvcCms.Models
         [Required(ErrorMessage = "Un titre pour le post est requis")]
         [StringLength(160)]
         public string Title { get; set; }
+        [StringLength(50)]
+
+        public string Slug { get; set; }
         [DisplayName("Date")]
         [Required(ErrorMessage = "La date est requise")]
         public DateTime Date { get; set; }

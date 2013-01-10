@@ -51,6 +51,14 @@
             </div>
 
             <div class="editor-label">
+                @Html.LabelFor(model => model.Slug)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Slug)
+                @Html.ValidationMessageFor(model => model.Slug)
+            </div>
+
+            <div class="editor-label">
                 @Html.LabelFor(model => model.Date)
             </div>
             

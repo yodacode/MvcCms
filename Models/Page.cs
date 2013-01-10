@@ -24,5 +24,6 @@ namespace MvcCms.Models
         public string Content { get; set; }
         public Author Author { get; set; }
         public bool Online { get; set; }
+        
     }
 }

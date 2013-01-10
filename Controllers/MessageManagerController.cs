@@ -42,18 +42,18 @@ namespace MvcCms.Controllers
 
         public int CounterMessages(string statment)
         {
-            if (statment == "read")
+            /*if (statment == "read")
             {
                 return db.Messages.Count();
             }
             else if (statment == "noread")
             {
-                 //db.Messages.find(
-
+                
                 return db.Messages.Count(); 
                    
-            }
-            
+            }*/
+
+            return db.Messages.Count(); 
               
         }
 

@@ -1,0 +1,20 @@
+﻿@model MvcCms.Models.Key
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Key</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.KeyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
