@@ -9,13 +9,16 @@
 </div>
 
 
-@foreach (var post in Model.Posts)
+@foreach (var post in Model.Posts.OrderByDescending(p => p.Date))
 {
     
     <div class="span8">
         <h3>@Html.ActionLink(post.Title, "Details", new { id = post.PostId })</h3>
         @Html.Raw(post.Content)
-        <div><strong>@post.Tag.Name</strong></div>
+        <div>
+            <span class="label">@post.Date.ToString("dd/MM/yyyy")</span> | 
+            <span class="label label-info">@post.Tag.Name</span> 
+        </div>
         @Html.ActionLink("Lire la suite", "Details", new { id = post.PostId }, new { @class="btn btn-mini section pull-right" })
     </div>
 

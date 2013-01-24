@@ -14,7 +14,6 @@ namespace MvcCms.Controllers
     [Authorize]
     public class PostManagerController : Controller
     {
-        
 
         public CmsEntities db = new CmsEntities();
 
@@ -30,7 +29,7 @@ namespace MvcCms.Controllers
 
         public ViewResult Index()
         {
-            var posts = db.Posts.Include(p => p.Tag).Include(p => p.Author);
+            var posts = db.Posts.Include(p => p.Tag);
             return View(posts.ToList());
         }
 
@@ -49,8 +48,8 @@ namespace MvcCms.Controllers
         public ActionResult Create()
         {
             ViewBag.TagId = new SelectList(db.Tags, "TagId", "Name");
-            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name");
-            ViewBag.KeyId = new SelectList(db.Keys, "KeyId", "Name");
+            //ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name");
+            //ViewBag.KeyId = new SelectList(db.Keys, "KeyId", "Name");
             return View();
         } 
 
@@ -76,8 +75,7 @@ namespace MvcCms.Controllers
             }
 
             ViewBag.TagId = new SelectList(db.Tags, "TagId", "Name", post.TagId);
-            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", post.AuthorId);
-            ViewBag.KeyId = new SelectList(db.Keys, "KeyId", "Name", post.KeyId);
+            //ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", post.AuthorId);
             return View(post);
         }
         
@@ -88,7 +86,7 @@ namespace MvcCms.Controllers
         {
             Post post = db.Posts.Find(id);
             ViewBag.TagId = new SelectList(db.Tags, "TagId", "Name", post.TagId);
-            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", post.AuthorId);
+            //ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", post.AuthorId);
             return View(post);
         }
 
@@ -113,7 +111,7 @@ namespace MvcCms.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.TagId = new SelectList(db.Tags, "TagId", "Name", post.TagId);
-            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", post.AuthorId);
+            //ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", post.AuthorId);
             return View(post);
         }
 

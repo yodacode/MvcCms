@@ -18,9 +18,11 @@ namespace MvcCms.Controllers
 
         public ActionResult GetMenuPages()
         {
-            var pages = storeDB.Pages.ToList();
+            var pages = storeDB.Pages.Where(p => p.Online);
             return View(pages);
         }
+
+
 
         //
         // GET: /Store/Details

@@ -19,7 +19,7 @@ namespace MvcCms.Controllers
 
         public ViewResult Index()
         {
-            var pages = db.Pages.Include(p => p.Author);
+            var pages = db.Pages;
             return View(pages.ToList());
         }
 
@@ -37,7 +37,7 @@ namespace MvcCms.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name");
+            //ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name");
             //ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name");
             return View();
         } 
@@ -55,7 +55,7 @@ namespace MvcCms.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", page.AuthorId);
+            //ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", page.AuthorId);
             return View(page);
         }
         
@@ -65,7 +65,7 @@ namespace MvcCms.Controllers
         public ActionResult Edit(int id)
         {
             Page page = db.Pages.Find(id);
-            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", page.AuthorId);
+            //ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", page.AuthorId);
             return View(page);
         }
 
@@ -81,7 +81,7 @@ namespace MvcCms.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", page.AuthorId);
+            //ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "Name", page.AuthorId);
             return View(page);
         }
 

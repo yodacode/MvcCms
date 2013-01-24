@@ -18,12 +18,13 @@
             }
         </ul>
         <div class="tab-content">
+            @{Html.RenderAction("Abstract", "Post", new { limit = 0});}
         </div>
     </div>
 </div>
 
 <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function () {
         var $content = $('.tab-content');
         $content.append('<h4 class="loader-post">Chargement des posts...</h4>');
@@ -36,4 +37,4 @@
            }
        });
    });
-</script>
+</script>-->

@@ -33,7 +33,7 @@ namespace MvcCms.Models
 
 
 
-            var authors = new List<Author>
+            /*var authors = new List<Author>
             {
                 new Author { Name = "Aaron Copland & London Symphony Orchestra" },
                 new Author { Name = "Aaron Goldberg" },
@@ -184,28 +184,46 @@ namespace MvcCms.Models
                 new Author { Name = "Yehudi Menuhin" },
                 new Author { Name = "Yo-Yo Ma" },
                 new Author { Name = "Zeca Pagodinho" }
-            };
+            };*/
 
             new List<Post>
             {
-                new Post { Title = "Lorem Ipsum", Tag = tags.Single(g => g.Name == "CMS"), Date = DateTime.Now, Author = authors.Single(a => a.Name == "Aaron Copland & London Symphony Orchestra"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="aaron-copland", Online = true },
-                new Post { Title = "Ipsum Dolor", Tag = tags.Single(g => g.Name == "Graphisme"), Date = DateTime.Now, Author = authors.Single(a => a.Name == "Aaron Goldberg"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funrato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="has-autem-provincias", Online= true },
-                new Post { Title = "For Those About To Webdesign We Salute You", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Now, Author = authors.Single(a => a.Name == "AC/DC"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenillius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="webdesign-we-salute-you", Online= true },
-                new Post { Title = "Let There Be Webdesign", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Now, Author = authors.Single(a => a.Name == "AC/DC"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium <strong>mare, Gnaeus Pompeius superato</strong> Tigrane regnis Armeniorum abstractas dicioni Romanillius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenae coniunxit.", Slug="lorem-ipsum", Online= true },
-                new Post { Title = "Balls to the Wall", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Now, Author = authors.Single(a => a.Name == "Accept"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="ipsum-dolorem", Online= true },
-                new Post { Title = "Restless and Wild", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Now, Author = authors.Single(a => a.Name == "Accept"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="ipsum-dolorem-lolilol", Online= true },
-                new Post { Title = "Va y James prend moi", Tag = tags.Single(g => g.Name == "CMS"), Date = DateTime.Now, Author = authors.Single(a => a.Name == "Adrian Leaper & Doreen de Feis"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abillius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenstractas dicioni Romanae coniunxit.", Slug="Dolor-sapeze-dolorem", Online= true },
-                new Post { Title = "Big Ones", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Now, Author = authors.Single(a => a.Name == "Aerosmith"), Content = "Has autem illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenillius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenprovincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit." , Slug="ipsum-doloqsdrem", Online= true},
-                new Post { Title = "Quiet Songs", Tag = tags.Single(g => g.Name == "Graphisme"), Date = DateTime.Now, Author = authors.Single(a => a.Name == "Aisha Duo"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="bang-bang", Online= true },
+                new Post { Title = "Lorem Ipsum", Tag = tags.Single(g => g.Name == "CMS"), Date = DateTime.Parse("2010-05-11"), Author = "James" , Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="aaron-copland", Online = true },
+                new Post { Title = "Ipsum Dolor", Tag = tags.Single(g => g.Name == "Graphisme"), Date = DateTime.Parse("1989-11-04"), Author = "Justine", Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funrato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="has-autem-provincias", Online= true },
+                new Post { Title = "For Those About To Webdesign We Salute You", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Parse("2005-09-01"), Author = "Clara", Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenillius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="webdesign-we-salute-you", Online= true },
+                new Post { Title = "Let There Be Webdesign", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Now, Author = "Berta", Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium <strong>mare, Gnaeus Pompeius superato</strong> Tigrane regnis Armeniorum abstractas dicioni Romanillius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenae coniunxit.", Slug="lorem-ipsum", Online= true },
+                new Post { Title = "Balls to the Wall", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Parse("2006-12-01"), Author = "Adolf", Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="ipsum-dolorem", Online= true },
+                new Post { Title = "Restless and Wild", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Parse("2003-11-06"), Author = "Staline", Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="ipsum-dolorem-lolilol", Online= true },
+                new Post { Title = "Va y James prend moi", Tag = tags.Single(g => g.Name == "CMS"), Date = DateTime.Parse("2012-11-05"), Author = "Zizou", Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abillius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenstractas dicioni Romanae coniunxit.", Slug="Dolor-sapeze-dolorem", Online= true },
+                new Post { Title = "Big Ones", Tag = tags.Single(g => g.Name == "Webdesign"), Date = DateTime.Parse("2011-09-01"), Author = "Mich", Content = "Has autem illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenillius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armenprovincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit." , Slug="ipsum-doloqsdrem", Online= true},
+                new Post { Title = "Quiet Songs", Tag = tags.Single(g => g.Name == "Graphisme"), Date = DateTime.Parse("2008-09-01"), Author = "Mich", Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.", Slug="bang-bang", Online= true },
                 
             }.ForEach(a => context.Posts.Add(a));
 
 
             new List<Page>
             {
-                new Page { Title = "Page 1", Date = DateTime.Now, Author = authors.Single(a => a.Name == "Aaron Copland & London Symphony Orchestra"), Content = "Has <strong>autem provincias, quas Orontes ambiens amnis<strong><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div> Armeniorum abstractas dicioni Romanae coniunxit.", Online= true },
-                new Page { Title = "Page 2", Date = DateTime.Now, Author = authors.Single(a => a.Name == "Aaron Goldberg"), Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funrato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.<div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div>", Online= true }, 
+                new Page { Title = "Page 1", Date = DateTime.Now, Author = "Franck", Content = "Has <strong>autem provincias, quas Orontes ambiens amnis<strong><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div> Armeniorum abstractas dicioni Romanae coniunxit.", Online= true },
+                new Page { Title = "Page 2", Date = DateTime.Now, Author = "Pierre", Content = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funrato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.<div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div><div class=\"section\">imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis</div>", Online= true }, 
             }.ForEach(a => context.Pages.Add(a));
+
+            /*var KeyPosts = new List<Keypost>
+            {
+                new Keypost { PostId = 1, KeyId = 1 },
+                new Keypost { PostId = 1, KeyId = 2 },
+                new Keypost { PostId = 1, KeyId = 3 },
+                new Keypost { PostId = 2, KeyId = 4 },
+                new Keypost { PostId = 2, KeyId = 5 },
+                new Keypost { PostId = 2, KeyId = 6 },
+                new Keypost { PostId = 3, KeyId = 1 },
+                new Keypost { PostId = 4, KeyId = 1 },
+                new Keypost { PostId = 4, KeyId = 2 },
+                new Keypost { PostId = 5, KeyId = 3 },
+                new Keypost { PostId = 6, KeyId = 4 },
+                new Keypost { PostId = 7, KeyId = 5 },
+            };
+            KeyPosts.ForEach(s => context.KeyPosts.Add(s));
+            context.SaveChanges();*/
 
         }
 

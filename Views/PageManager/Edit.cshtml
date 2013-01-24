@@ -21,11 +21,11 @@
             @Html.HiddenFor(model => model.PageId)
 
             <div class="editor-label">
-                @Html.LabelFor(model => model.AuthorId, "Author")
+                @Html.LabelFor(model => model.Author)
             </div>
             <div class="editor-field">
-                @Html.DropDownList("AuthorId", String.Empty)
-                @Html.ValidationMessageFor(model => model.AuthorId)
+                @Html.EditorFor(model => model.Author)
+                @Html.ValidationMessageFor(model => model.Author)
             </div>
 
             <div class="editor-label">

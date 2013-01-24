@@ -43,7 +43,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Truncate(item.Author.Name, 25)
+            @Truncate(item.Author, 25)
         </td>
         <td>
             @Truncate(item.Title, 25)

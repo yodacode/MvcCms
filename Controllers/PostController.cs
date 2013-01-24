@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Text.RegularExpressions;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,15 +19,19 @@ namespace MvcCms.Controllers
         // GET: /Store/
         public ActionResult Index()
         {
-            
             var tags = storeDB.Tags.ToList();
             return View(tags);
         }
 
-        public ActionResult Abstract()
+        public ActionResult Abstract(int limit)
         {
-            var posts = storeDB.Posts.ToList();
-            return View(posts);
+
+            var posts = storeDB.Posts.Where(p => p.Online).OrderByDescending(p => p.Date).Include(p => p.Tag);
+            if(limit != 0)
+            {
+                posts = storeDB.Posts.Where(p => p.Online).OrderByDescending(p => p.Date).Take(limit).Include(p => p.Tag);  
+            }
+            return View(posts.ToList());
         }
 
         //

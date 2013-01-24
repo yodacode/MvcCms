@@ -13,7 +13,7 @@ namespace MvcCms.Models
         [ScaffoldColumn(false)]
         public int PageId { get; set; }
         [DisplayName("Auteur")]
-        public int AuthorId { get; set; }
+        public string Author { get; set; }
         [Required(ErrorMessage = "Un titre pour le post est requis")]
         [StringLength(160)]
         public string Title { get; set; }
@@ -22,7 +22,7 @@ namespace MvcCms.Models
         public DateTime Date { get; set; }
         [Required(ErrorMessage = "Vous devez renseigner un contenu")]
         public string Content { get; set; }
-        public Author Author { get; set; }
+        //public Author Author { get; set; }
         public bool Online { get; set; }
         
     }

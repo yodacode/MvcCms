@@ -12,9 +12,9 @@ namespace MvcCms.Models
         public DbSet<Post> Posts { get; set; }
         public DbSet<Page> Pages { get; set; }
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<Author> Authors { get; set; }
+        //public DbSet<Author> Authors { get; set; }
         public DbSet<Message> Messages { get; set; }
-
+        
 
           internal void SaveSchanges()
           {

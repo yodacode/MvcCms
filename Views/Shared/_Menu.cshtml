@@ -29,6 +29,7 @@
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Le blog <b class="caret"></b></a>
                 </li>
              }
+            @{Html.RenderAction("GetMenuPages", "Page");}
         </ul>
         <ul class="nav pull-right">
             <li class="divider-vertical"></li>   
@@ -46,19 +47,7 @@
     $(document).ready(function () {
         $subMenu = $('.dropdown');
         $navContainer = $('.navbar-inner .pull-left');
-        $navContainer.append(
-            '<li class="loader-page">'+
-            '<a>Chargement des pages...</a>'+
-            '</li>'
-           );
-       $.ajax({
-           type: "GET",
-           url: '@Url.Action("getMenuPages", "Page")',
-           success: function (data) {
-               $('.loader-page').remove();
-               $navContainer.append(data);
-           }
-       });
+      
         $.ajax({
             type: "GET",
             url: '@Url.Action("GetMenuTags", "Post")',

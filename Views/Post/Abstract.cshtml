@@ -5,11 +5,17 @@
     Layout = null;
 }
 
+<h3>Voici les @Model.Count() derniers Articles</h3>
 @foreach (var post in Model)
 {
     <div class="span8">
         <h3>@Html.ActionLink(post.Title, "Details", new { id = post.PostId, title = post.Slug })</h3>
         @Html.Raw(post.Content)
+        <div>
+            <span class="label">@post.Date.ToString("dd/MM/yyyy")</span> | 
+            <span class="label label-info">@post.Tag.Name</span> |
+            <span class="label label-warning">@post.Author</span>
+        </div>
         @Html.ActionLink("Lire la suite", "Details", new { id = post.PostId}, new { @class="btn btn-mini section pull-right" })
     </div>
 }

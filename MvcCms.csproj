@@ -498,7 +498,6 @@
     <Content Include="Views\Page\Details.cshtml" />
     <Content Include="Views\Account\RegisterSuccess.cshtml" />
     <Content Include="Views\Post\GetMenuTags.cshtml" />
-    <Content Include="Views\Person\CreatePerson.cshtml" />
     <Content Include="Views\MessageManager\Index.cshtml" />
     <Content Include="Views\MessageManager\Details.cshtml" />
     <Content Include="Views\MessageManager\Delete.cshtml" />
