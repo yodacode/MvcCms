@@ -27,6 +27,8 @@
              } else {
                 <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Le blog <b class="caret"></b></a>
+                    @{Html.RenderAction("GetMenuTags", "Post");}
+
                 </li>
              }
             @{Html.RenderAction("GetMenuPages", "Page");}
@@ -48,16 +50,11 @@
         $subMenu = $('.dropdown');
         $navContainer = $('.navbar-inner .pull-left');
       
-        $.ajax({
-            type: "GET",
-            url: '@Url.Action("GetMenuTags", "Post")',
-            success: function (data) {
-               $subMenu.append(data);
+
                $subMenu.find('.dropdown-menu').append(
                    '<li class="divider"></li>'+
                    '<li><a href="/Post/Index">Tout</a></li>'
                 );
-           }
-        });
+
    });
 </script>

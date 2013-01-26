@@ -69,6 +69,7 @@ namespace MvcCms.Controllers
                 {
                     post.Slug = SanitizeUrl(post.Title);
                 }
+
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");  

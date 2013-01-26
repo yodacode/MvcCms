@@ -28,6 +28,7 @@
                 @Html.ValidationMessageFor(model => model.TagId)
             </div>
 
+            <div class="author-name hidden">@Model.Author</div>
             <div class="editor-label">
                 @Html.LabelFor(model => model.Author)
             </div>
@@ -52,6 +53,7 @@
                 @Html.ValidationMessageFor(model => model.Slug)
             </div>
 
+            <div class="current-date hidden">@DateTime.Now</div>
             <div class="editor-label">
                 @Html.LabelFor(model => model.Date)
             </div>

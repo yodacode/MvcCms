@@ -3,10 +3,14 @@
 @{
     ViewBag.Title = "GetMenuPages";
     Layout = null;
+    
 }
+
+
+   
 
 @foreach (var page in Model)
 {
-    <li>@Html.ActionLink(page.Title, "Details", new { id = page.PageId })</li>
+    <li>@Html.ActionLink(page.Title, "Details", new { id = page.PageId, title = page.Title.ToLower().Replace(" ", "-")})</li>
 }
 

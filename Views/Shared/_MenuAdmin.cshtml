@@ -4,7 +4,6 @@
     ViewBag.CurrentAction = @ViewContext.Controller.ValueProvider.GetValue("action").RawValue;    
 }
 
-@HttpContext.Current.User.Identity.Name
 
 <div class="navbar navbar-inverse">
     <div class="navbar-inner">
@@ -28,6 +27,16 @@
              } else {
                 <li>
                      @Html.ActionLink("Gérer les pages", "Index", "PageManager")
+                </li>
+             }
+             @if (ViewBag.CurrentController == "TagManager")
+             {
+                 <li class="active">
+                      @Html.ActionLink("Gérer les catégories", "Index", "TagManager")
+                 </li>
+             } else {
+                <li>
+                     @Html.ActionLink("Gérer les catégories", "Index", "TagManager")
                 </li>
              }
              @if (HttpContext.Current.User.IsInRole("Administrator"))

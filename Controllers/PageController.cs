@@ -26,7 +26,7 @@ namespace MvcCms.Controllers
 
         //
         // GET: /Store/Details
-        public ActionResult Details(int id)
+        public ActionResult Details(int id, string title)
         {
             var page = storeDB.Pages.Find(id);
             return View(page);

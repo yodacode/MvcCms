@@ -16,10 +16,18 @@
 	color:#B94A48 !important;
 }
 
-
+.small
+{
+	font-size:10px;
+}
 .container
 {
 	margin-bottom:50px;
+}
+
+#archive li
+{
+	list-style:none;
 }
 
 .display-none

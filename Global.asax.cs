@@ -27,11 +27,26 @@ namespace MvcCms
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                "Post",
-                "blog/{id}/{title}",
-                new { controller = "Post", action = "Details", id = UrlParameter.Optional }
+                "PostIndex",
+                "blog",
+                new { controller = "Post", action = "Index", id = UrlParameter.Optional}
              );
 
+
+            routes.MapRoute(
+                "Page",
+                "pages/{id}/{title}",
+                new { controller = "Page", action = "Details", id = UrlParameter.Optional }
+             );
+
+            /*routes.MapRoute(
+               "Tag",
+               "blog/tag/tag={tag}",
+               new { controller = "Post", action = "Browse", tag =  "" }
+            );*/
+
+
+       
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters

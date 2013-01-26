@@ -55,5 +55,20 @@ namespace MvcCms.Controllers
             var tags = storeDB.Tags.ToList();
             return View(tags);
         }
+
+
+        public ActionResult Archive()
+        {
+            var posts = storeDB.Posts.ToList();
+      
+            return View(posts);
+        }
+
+        public ActionResult GetArchives(string month, string year)
+        {
+            var posts = storeDB.Posts.Where(p => p.Month == month).Where(p => p.Year == year);
+            return View(posts);
+        }
+
     }
 }

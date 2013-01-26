@@ -18,6 +18,7 @@
         <fieldset>
             <legend>Formulaire</legend>
 
+            <div class="author-name hidden">@HttpContext.Current.User.Identity.Name</div>
             <div class="editor-label">
                 @Html.LabelFor(model => model.Author)
             </div>
@@ -34,6 +35,7 @@
                 @Html.ValidationMessageFor(model => model.Title)
             </div>
 
+            <div class="current-date hidden">@DateTime.Now</div>
             <div class="editor-label">
                 @Html.LabelFor(model => model.Date)
             </div>

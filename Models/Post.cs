@@ -34,6 +34,10 @@ namespace MvcCms.Models
         [DisplayName("Date")]
         public DateTime Date { get; set; }
 
+        public string Month { get; set; }
+
+        public string Year { get; set; }
+
         [Required(ErrorMessage = "Vous devez renseigner un contenu")]
         public string Content { get; set; }
 
@@ -45,9 +49,6 @@ namespace MvcCms.Models
 
         public bool Online { get; set; }
 
-        public bool Lol { get; set; }
-
-        
 
        
     }

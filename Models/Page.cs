@@ -17,6 +17,7 @@ namespace MvcCms.Models
         [Required(ErrorMessage = "Un titre pour le post est requis")]
         [StringLength(160)]
         public string Title { get; set; }
+
         [DisplayName("Date")]
         [Required(ErrorMessage = "La date est requise")]
         public DateTime Date { get; set; }
@@ -24,6 +25,10 @@ namespace MvcCms.Models
         public string Content { get; set; }
         //public Author Author { get; set; }
         public bool Online { get; set; }
+
+
         
     }
+
+    
 }

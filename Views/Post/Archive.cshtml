@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MvcCms.Models.Post>
+
+@{
+    ViewBag.Title = "Archive";
+}
+
+<h2>Archive</h2>
+
+<ul class="archive">
+    @foreach (var post in Model.OrderByDescending(p=> p.Date))
+    {
+        <li>
+            <div class="month">@post.Date.ToString("MM")</div>
+            <div class="year">@post.Date.ToString("yyyy")</div>
+        </li>
+    }
+</ul>
+
+<ul id="archive">
+    
+</ul>

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MvcCms.Models.Post>
+@{
+    ViewBag.Title = "GetArchives";
+}
+
+<h2>GetArchives</h2>
+
+@foreach (var post in Model)
+{
+    <div>DATE : @post.Date</div>
+    <div>MOIS : @post.Month</div>
+    <div>ANNEE : @post.Year</div>
+}

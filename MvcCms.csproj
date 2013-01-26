@@ -104,6 +104,7 @@
     <Compile Include="Controllers\PageManagerController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\PostManagerController.cs" />
+    <Compile Include="Controllers\TagManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -506,6 +507,13 @@
     <Content Include="Views\KeyManager\Create.cshtml" />
     <Content Include="Views\KeyManager\Edit.cshtml" />
     <Content Include="Views\KeyManager\Delete.cshtml" />
+    <Content Include="Views\TagManager\Index.cshtml" />
+    <Content Include="Views\TagManager\Details.cshtml" />
+    <Content Include="Views\TagManager\Create.cshtml" />
+    <Content Include="Views\TagManager\Edit.cshtml" />
+    <Content Include="Views\TagManager\Delete.cshtml" />
+    <Content Include="Views\Post\Archive.cshtml" />
+    <Content Include="Views\Post\GetArchives.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\tiny_mce\plugins\spellchecker\classes\utils\" />
