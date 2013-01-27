@@ -469,7 +469,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Post\Browse.cshtml" />
     <Content Include="Views\Post\Details.cshtml" />
     <Content Include="Views\PostManager\Index.cshtml" />
     <Content Include="Views\PostManager\Details.cshtml" />
@@ -514,6 +513,7 @@
     <Content Include="Views\TagManager\Delete.cshtml" />
     <Content Include="Views\Post\Archive.cshtml" />
     <Content Include="Views\Post\GetArchives.cshtml" />
+    <Content Include="Views\Post\Navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\tiny_mce\plugins\spellchecker\classes\utils\" />

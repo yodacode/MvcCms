@@ -14,7 +14,7 @@
         <ul class="nav nav-tabs">
             @foreach (var tag in Model)
             {
-                <li>@Html.ActionLink(tag.Name, "Browse", new { tag = tag.Name })</li>
+                <li>@Html.ActionLink(tag.Name, "Navigation", new { tag = tag.TagId })</li>
             }
         </ul>
         <div class="tab-content">

@@ -34,16 +34,14 @@ namespace MvcCms.Controllers
             return View(posts.ToList());
         }
 
-        //
-        // GET: /Store/Browse
-        public ActionResult Browse(string tag)
+        public ActionResult Navigation(int tag, string title)
         {
-            var tagModel = storeDB.Tags.Include("Posts").Single(g => g.Name == tag);
-            return View(tagModel);
+            var posts = storeDB.Posts.Where(p => p.TagId == tag).OrderByDescending(p => p.Date).Include(p => p.Tag);
+            ViewBag.CurrentTag = storeDB.Tags.Find(tag).Name;
+            return View(posts);
         }
 
-        //
-        // GET: /Store/Details
+        
         public ActionResult Details(int id, string title)
         {
             var post = storeDB.Posts.Find(id);
@@ -66,7 +64,15 @@ namespace MvcCms.Controllers
 
         public ActionResult GetArchives(string month, string year)
         {
-            var posts = storeDB.Posts.Where(p => p.Month == month).Where(p => p.Year == year);
+            var posts = storeDB.Posts.Where(p => p.Year == year).Include(p => p.Tag);
+            if (month != null)
+            {
+                posts = storeDB.Posts.Where(p => p.Month == month).Where(p => p.Year == year).Include(p => p.Tag);
+            }
+
+            ViewBag.Month = month;
+            ViewBag.Year = year;
+            
             return View(posts);
         }
 

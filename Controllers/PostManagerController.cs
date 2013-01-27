@@ -70,6 +70,8 @@ namespace MvcCms.Controllers
                     post.Slug = SanitizeUrl(post.Title);
                 }
 
+                post.Month = post.Date.ToString("MM");
+                post.Year = post.Date.ToString("yyyy");
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
@@ -107,6 +109,9 @@ namespace MvcCms.Controllers
                 {
                     post.Slug = SanitizeUrl(post.Title);
                 }
+                post.Month = post.Date.ToString("MM");
+                post.Year = post.Date.ToString("yyyy");
+
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

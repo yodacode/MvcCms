@@ -11,6 +11,11 @@
 	border-color: #B94A48 !important;
 }
 
+.heading
+{
+	text-align:right;
+}
+
 .field-validation-error
 {
 	color:#B94A48 !important;
@@ -28,6 +33,12 @@
 #archive li
 {
 	list-style:none;
+}
+
+
+#archive .small
+{
+	text-indent:5px;
 }
 
 .display-none

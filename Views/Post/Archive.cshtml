@@ -2,9 +2,10 @@
 
 @{
     ViewBag.Title = "Archive";
+    Layout = null;
 }
 
-<h2>Archive</h2>
+<h3>Archive</h3>
 
 <ul class="archive">
     @foreach (var post in Model.OrderByDescending(p=> p.Date))

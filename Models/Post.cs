@@ -49,7 +49,6 @@ namespace MvcCms.Models
 
         public bool Online { get; set; }
 
-
        
     }
 }

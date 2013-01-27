@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MvcCms.Models.Post>
+
+@{
+    ViewBag.Title = "Navigation";
+}
+
+<div class="container">
+    <div class="page-header">
+        <h2>Catégorie :  @ViewBag.CurrentTag</h2>
+    </div>
+
+    @foreach (var post in Model)
+    {
+        if(post.Online){
+        <div class="span8">
+            <h3>@Html.ActionLink(post.Title, "Details", new { id = post.PostId, title = post.Slug })</h3>
+            @Html.Raw(post.Content)
+            <div>
+                <span class="label">@post.Date.ToString("dd/MM/yyyy")</span> |
+                <span class="label label-warning">@post.Author</span> |
+                <span class="label label-info">@post.Tag.Name</span>
+            </div>
+            @Html.ActionLink("Lire la suite", "Details",  new { id = post.PostId, title = post.Slug }, new { @class="btn btn-mini section pull-right" })
+        </div>
+    }
+    }
+
+</div>

@@ -2,14 +2,36 @@
     ViewBag.Title = "Index";
 }
 
-<div class="container">
-    
+<div class="container" id="home">
+        
     <div class="page-header">
-        <h1>Le .NET c'est mieux que le PHP</h1>
+        <div class="alert alert-block span9">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>Bonjour Mr Carvalho !</h4>
+          Bienvenue sur notre super site, bonne visite :) 
+        </div>
+        <div class="heading">
+            <p>
+                Benjamin de Vaublanc<br />
+                Dorian Boussac<br />
+                Wiston Cherry<br />
+                <strong>Groupe : EB1</strong>
+            </p>
+        </div>
     </div>
     
     <div class="container">
-        @{Html.RenderAction("Abstract", "Post", new { limit = 6});}
+        <div class="span2">
+            
+            <h3>Catégories</h3>
+            @{Html.RenderAction("GetMenuTags", "Post");}
+        </div>
+        <div class="span7">
+            @{Html.RenderAction("Abstract", "Post", new { limit = 5});}
+        </div>
+        <div class="span2">
+            @{Html.RenderAction("Archive", "Post");}
+        </div>
     </div>
 </div>
 

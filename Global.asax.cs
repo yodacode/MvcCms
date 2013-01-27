@@ -29,21 +29,53 @@ namespace MvcCms
             routes.MapRoute(
                 "PostIndex",
                 "blog",
-                new { controller = "Post", action = "Index", id = UrlParameter.Optional}
+                new { controller = "Post", action = "Index"}
              );
 
+            routes.MapRoute(
+                "Message",
+                "message",
+                new { controller = "Message", action = "Index" }
+             );
 
+            routes.MapRoute(
+                "MessageSuccess",
+                "message/confirmation/{id}",
+                new { controller = "Message", action = "Success" }
+             );
+
+            routes.MapRoute(
+                "Logon",
+                "logon",
+                new { controller = "Account", action = "LogOn" }
+             );
+
+   
             routes.MapRoute(
                 "Page",
                 "pages/{id}/{title}",
                 new { controller = "Page", action = "Details", id = UrlParameter.Optional }
              );
 
+            routes.MapRoute(
+                "Post",
+                "blog/{id}/{title}",
+                new { controller = "Post", action = "Details", id = UrlParameter.Optional }
+             );
+
+            routes.MapRoute(
+                "PostArchive",
+                "blog/archives/{year}/{month}",
+                new { controller = "Post", action = "GetArchives"}
+             );
+
+
             /*routes.MapRoute(
                "Tag",
-               "blog/tag/tag={tag}",
-               new { controller = "Post", action = "Browse", tag =  "" }
+               "blog/tag/{tag}",
+               new { controller = "Post", action = "Navigation", id = UrlParameter.Optional }
             );*/
+
 
 
        

@@ -11,6 +11,6 @@
 <ul class="dropdown-menu">
     @foreach (var tag in Model)
     {
-        <li>@Html.ActionLink(tag.Name, "Browse", new { tag = tag.Name })</li>
+        <li>@Html.ActionLink(tag.Name, "Navigation", new { tag = tag.TagId })</li>
     }
 </ul>
