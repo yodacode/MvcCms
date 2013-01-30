@@ -85,9 +85,7 @@ $(function () {
 
 
             for (var j = 0; j < yearTab[year].length; j++) {
-
                 $('.' + year).append('<div class="small"><a href="/blog/archives/'+year+'/'+yearTab[year][j]+'">' + monthMatch[yearTab[year][j]] + '</a></div>');
-
             } 
 
         }
