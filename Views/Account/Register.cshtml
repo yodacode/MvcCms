@@ -6,6 +6,8 @@
 
 <div class="container">
 
+
+
 <div class="page-header">
     <h2>Créer un compte</h2>
     <p>
@@ -14,6 +16,17 @@
     <p>
         Le mot de passe requiert un minimum de @Membership.MinRequiredPasswordLength caractères.
     </p>
+</div>
+
+<div class="alert alert-block span9">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    
+    La gestion des rôles est géré avec l'interface d'ASP.NET Configuration<br />
+    Login : admin<br />
+    mdp : abc123<br />
+    role : Administrator
+
+
 </div>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
