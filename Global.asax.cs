@@ -70,15 +70,12 @@ namespace MvcCms
              );
 
 
-            /*routes.MapRoute(
+            routes.MapRoute(
                "Tag",
-               "blog/tag/{tag}",
+               "blog/tag/{tag}/{title}",
                new { controller = "Post", action = "Navigation", id = UrlParameter.Optional }
-            );*/
+            );
 
-
-
-       
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
