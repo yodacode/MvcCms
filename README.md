@@ -110,11 +110,15 @@ Rappel : les rôles on été géré à l’aide de l’interface ASP.NET Configu
 Pour accéder aux actions de l’administrateur. Il faut créer un compte admin avec un rôle Administrator
 
 ### PostController
+
 -	Index return view()
-Permet de lister tous les posts
+	Permet de lister tous les posts
+
 -	Abstract(int limit) return view()
-Permet de récupérer les derniers posts par ordre anté-chronologique en fonction de la limit paramétré 
+	Permet de récupérer les derniers posts par ordre anté-chronologique en fonction de la limit paramétré 
+
 -	Navigation (int tag, string title) return view()
-Permet de récupérer les posts ou tag = tagId, le deuxième paramètre title nous servira plus tard pour le formatage de la route.
+	Permet de récupérer les posts ou tag = tagId, le deuxième paramètre title nous servira plus tard pour le formatage de la route.
+
 -	Details(int id) return view(post)
-Permet d’accéder au detail d’un post
+	Permet d’accéder au detail d’un post
