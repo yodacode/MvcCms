@@ -9,8 +9,7 @@ GROUPE EB1
 
 Les Models
 ------------------------------------------------------------------------
-
-Post attributs
+### Post attributs
 -	int  PostId 
 -	int  TagId
 -	int AuthorId
