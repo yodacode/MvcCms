@@ -85,7 +85,12 @@ protected void Application_Start()
 }
 ````
 
+Les Controllers 
+------------------------------------------------------------------------
 
+Pour chaque entité nous avons décidé de créer deux Controller
+
+Un controller détenant les actions publiques à tous les visiteurs et un autre destiné aux actions privées pour les utilisateurs et administrateur,  par convention ce dernier comportera la mention Manager
 
 
 
