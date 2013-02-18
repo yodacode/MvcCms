@@ -10,7 +10,7 @@ GROUPE EB1
 
 ####[Télécharger les spécifications techniques](docs/Projet-spec_MvcCms.pdf)
 
-####[Télécharger le guide utilisateur](docs/Projet-spec_MvcCms.pdf)
+####[Télécharger le guide utilisateur](docs/guide-utilisateur_MvcCms.pdf)
 
 
 Les Models
