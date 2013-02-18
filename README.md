@@ -4,8 +4,13 @@ PROJET .NET POUR LE WEB
 Benjamin de Vaublanc, 
 Dorian Boussac,
 Wiston Cherry,
- 
+
 GROUPE EB1
+
+
+[Télécharger les spécifications techniques!](docs/Projet-spec_MvcCms.pdf)
+
+[Télécharger le guide utilisateur](docs/Projet-spec_MvcCms.pdf)
 
 
 Les Models
