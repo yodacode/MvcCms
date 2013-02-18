@@ -96,11 +96,9 @@ Un controller détenant les actions publiques à tous les visiteurs et un autre 
 EX : Model Post
 
 PostController 
-
 (contenant les action publique du site)
 
 PostManagerController  
-
 (contenant les action réservé aux membres et administrateur) 
 
 
