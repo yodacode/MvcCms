@@ -50,7 +50,7 @@ Les Models
 
 ### AccountModels
 
-##Class ChangePassword
+####Class ChangePassword
 
 -	string OldPassword
 -	string NewPassword
