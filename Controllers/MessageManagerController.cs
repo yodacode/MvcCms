@@ -8,7 +8,8 @@ using System.Web.Mvc;
 using MvcCms.Models;
 
 namespace MvcCms.Controllers
-{ 
+{
+    [Authorize]
     public class MessageManagerController : Controller
     {
         private CmsEntities db = new CmsEntities();
