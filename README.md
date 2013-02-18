@@ -105,3 +105,16 @@ PostManagerController
 Certaine classe et actions seront précédé de la mention ````[Authorize]```` afin d’être accessible seulement par des membres du site. D’autres requiert des droits Administrateur, ces dernières seront précédé. 
 par un ````[Authorize(Roles = « Administrator »)]````.
 
+
+Rappel : les rôles on été géré à l’aide de l’interface ASP.NET Configuration.
+Pour accéder aux actions de l’administrateur. Il faut créer un compte admin avec un rôle Administrator
+
+### PostController
+-	Index return view()
+Permet de lister tous les posts
+-	Abstract(int limit) return view()
+Permet de récupérer les derniers posts par ordre anté-chronologique en fonction de la limit paramétré 
+-	Navigation (int tag, string title) return view()
+Permet de récupérer les posts ou tag = tagId, le deuxième paramètre title nous servira plus tard pour le formatage de la route.
+-	Details(int id) return view(post)
+Permet d’accéder au detail d’un post
