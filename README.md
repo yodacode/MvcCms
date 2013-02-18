@@ -93,10 +93,17 @@ Pour chaque entité nous avons décidé de créer deux Controller
 Un controller détenant les actions publiques à tous les visiteurs et un autre destiné aux actions privées pour les utilisateurs et administrateur,  par convention ce dernier comportera la mention Manager
 
 
+EX : Model Post
+
+PostController 
+
+(contenant les action publique du site)
+
+PostManagerController  
+
+(contenant les action réservé aux membres et administrateur) 
 
 
-
-
-
-
+Certaine classe et actions seront précédé de la mention ````[Authorize]```` afin d’être accessible seulement par des membres du site. D’autres requiert des droits Administrateur, ces dernières seront précédé. 
+par un ````[Authorize(Roles = « Administrator »)]````.
 
