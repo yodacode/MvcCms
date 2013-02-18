@@ -1,9 +1,10 @@
 PROJET .NET POUR LE WEB
 ========================================================================
 
-Benjamin de Vaublanc 
-Dorian Boussac
-Wiston Cherry 
+Benjamin de Vaublanc, 
+Dorian Boussac,
+Wiston Cherry,
+ 
 GROUPE EB1
 
 
