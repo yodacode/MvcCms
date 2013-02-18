@@ -56,6 +56,41 @@ Les Models
 -	string NewPassword
 -	string ConfirmPassword
 
+####Class LogOnModel
+
+-	string UserName
+-	string Password
+-	bool RememberMe
+
+####Class RegisterModel
+
+-	string UserName
+-	string Email
+-	string Password
+-	string ConfirmPAssword
+
+####CmsEntities : DbContext
+-	DbSet<Key> Keys
+-	DbSet<Post> Posts
+-	DbSet<Page> Pages
+-	DbSet<Message> Messages
+
+####SampleData
+Pour pouvoir remplir la base de donnée avec des données fictives, lorsque la base de donnée se réinitialise, Cf la method Application_Start()
+
+````
+protected void Application_Start()
+{
+    System.Data.Entity.Database.SetInitializer(new MvcCms.Models.SampleData());
+}
+````
+
+
+
+
+
+
+
 
 
 
